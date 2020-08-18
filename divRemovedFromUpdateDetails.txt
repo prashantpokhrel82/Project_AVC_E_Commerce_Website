@@ -1,0 +1,35 @@
+<div class="col-sm-12 col-md-6 col-lg-4">
+  <?php
+  if((!isset($_SESSION['username']))||($_SESSION['username']=='')){
+    echo "";
+  }
+  else{
+  ?>
+  <h4>Card Details</h4>
+
+    <div class="form-group">
+      <label for="card_number">Card Number</label>
+      <input type="number"  class="form-control" id="card_number" value="<?php echo getCardNumber();?>" name="card_number">
+      <span class="error"><?php echo $card_number_error ?></span>
+    </div>
+
+    <div class="form-group">
+      <label for="name_on_card">Name on Card</label>
+      <input type="text" class="form-control" id="name_on_card" value="<?php echo getCardName();?>" name="name_on_card">
+      <span class="error"><?php echo $name_on_card_error ?></span>
+    </div>
+
+    <div class="form-group">
+      <label for="expiry_date">Expiry Date</label>
+      <input type="date" class="form-control" id="expiry_date" value="<?php echo getCardExpiryDate();?>" name="expiry_date">
+
+      <span class="error"><?php echo $expiry_date_error ?></span>
+    </div>
+
+
+
+
+  <?php
+  }
+  ?>
+</div>
